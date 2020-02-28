@@ -1,0 +1,21 @@
+<main>
+  <header>
+    <h1>{{ title }}</h1>
+    <span>Por Jonatan Alvarez</span>
+  </header>
+  <section>
+    <div class="list">
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel *ngFor="let person of listPeople; let i = index" id="{{i}}" title="{{ person.name }} {{ person.lastName }}">
+          <ng-template ngbPanelContent>
+            <strong>Nombre:</strong> {{ person.name }}<br />
+            <strong>Apellido:</strong> {{ person.lastName }}<br />
+            <strong>Edad:</strong> {{ person.edad }}<br />
+            <strong>Biografia:</strong> {{ person.biography }}<br />
+            <strong>Telefonos:</strong> {{ person.telefonos }}
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </section>
+</main>
